@@ -4,7 +4,7 @@ import heroImg from "../assets/hero.jpg";
 import coffeeImg from "../assets/coffee.jpg";
 import atmosphereImg from "../assets/atmosphere.jpg";
 import menuImg from "../assets/menu.jpg";
-import logoImg from "../assets/logo.png";
+import logoImg from "../assets/logo.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,

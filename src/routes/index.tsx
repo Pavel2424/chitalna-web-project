@@ -74,21 +74,21 @@ function Index() {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20">
+        <div className={`max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16 md:h-20 ${scrolled ? "text-foreground" : "text-[oklch(0.97_0.012_85)]"}`}>
           <a href="#" className="flex items-center gap-3">
-            <img src={logoImg} alt="Читална" className="h-10 w-10 object-contain" />
+            <img src={logoImg} alt="Читална" className="h-10 w-10 object-contain rounded-sm" />
             <span className="font-serif text-xl md:text-2xl tracking-tight">Читална</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm">
             {nav.map((n) => (
-              <a key={n.href} href={n.href} className="text-foreground/70 hover:text-foreground transition-colors">
+              <a key={n.href} href={n.href} className={`transition-colors ${scrolled ? "text-foreground/70 hover:text-foreground" : "text-[oklch(0.97_0.012_85)]/85 hover:text-[oklch(0.97_0.012_85)]"}`}>
                 {n.label}
               </a>
             ))}
           </nav>
           <a
             href="#kontakt"
-            className="hidden md:inline-flex items-center text-sm border hairline px-4 py-2 rounded-full hover:bg-primary hover:text-primary-foreground transition-colors"
+            className={`hidden md:inline-flex items-center text-sm border px-4 py-2 rounded-full transition-colors ${scrolled ? "hairline hover:bg-primary hover:text-primary-foreground" : "border-[oklch(0.97_0.012_85)]/60 hover:bg-[oklch(0.97_0.012_85)] hover:text-[oklch(0.18_0.018_40)]"}`}
           >
             Резервирај маса
           </a>

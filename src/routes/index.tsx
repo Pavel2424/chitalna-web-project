@@ -58,6 +58,16 @@ function Index() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    // Always start at the top on initial load, ignoring any hash or restored scroll position
+    if (typeof window !== "undefined") {
+      if (window.location.hash) {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+      }
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "manual";
+      }
+      window.scrollTo(0, 0);
+    }
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
